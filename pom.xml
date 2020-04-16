@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sc</groupId>
+  <artifactId>service-gateway</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <description>gateway</description>
+  <name>service-gateway</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <skipTests>true</skipTests>
+    <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+  </properties>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.8.RELEASE</version>
+    <relativePath />
+  </parent>
+
+  <dependencies>
+      <dependency>
+          <groupId>com.sc</groupId>
+          <artifactId>common</artifactId>
+          <version>0.1-SNAPSHOT</version>
+          <exclusions>
+            <exclusion>
+              <artifactId>spring-boot-starter-web</artifactId>
+              <groupId>org.springframework.boot</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>spring-webmvc</artifactId>
+              <groupId>org.springframework</groupId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            </exclusion>
+          </exclusions>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-starter-gateway</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <package.environment>dev</package.environment>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <package.environment>prod</package.environment>
+            </properties>
+            <!--<activation>
+              <activeByDefault>true</activeByDefault>
+            </activation>-->
+        </profile>
+    </profiles>
+
+  <build>
+      <finalName>${project.artifactId}</finalName>
+
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+              <excludes>
+                  <exclude>dev/*</exclude>
+                  <exclude>prod/*</exclude>
+              </excludes>
+          </resource>
+          <resource>
+              <directory>src/main/resources/${package.environment}</directory>
+          </resource>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.properties</include>
+                  <include>**/*.xml</include>
+                  <include>**/*.yml</include>
+              </includes>
+              <filtering>true</filtering>
+          </resource>
+      </resources>
+
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.3</version>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                  <testFailureIgnore>true</testFailureIgnore>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+          </plugin>
+      </plugins>
+
+  </build>
+</project>
