@@ -34,12 +34,12 @@
           <version>0.1-SNAPSHOT</version>
           <exclusions>
             <exclusion>
-              <artifactId>spring-boot-starter-web</artifactId>
               <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-web</artifactId>
             </exclusion>
             <exclusion>
-              <artifactId>spring-webmvc</artifactId>
               <groupId>org.springframework</groupId>
+              <artifactId>spring-webmvc</artifactId>
             </exclusion>
             <exclusion>
               <groupId>org.springframework.boot</groupId>
