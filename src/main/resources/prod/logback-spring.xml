@@ -4,7 +4,8 @@
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
-                [%d{yyyy-MM-dd HH:mm:ss}] %-4relative [%thread] %-5level %logger{35}.%M\(%L\) - %msg%n
+                <!--[%d{yyyy-MM-dd HH:mm:ss}] %-4relative [%thread] %-5level %logger{35}.%M\(%L\) - %msg%n-->
+                [%d{yyyy-MM-dd HH:mm:ss.SSS}] %-4relative [%yellow(%thread)] %highlight(%-5level) [%yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId})] %green(%logger{35}.%M\(%L\)) - %msg%n
             </pattern>
         </layout>
     </appender>
@@ -17,7 +18,7 @@
         </filter>
         <encoder>
             <pattern>
-                [%d{yyyy-MM-dd HH:mm:ss}] %-4relative [%thread] %-5level %logger{35}.%M\(%L\) - %msg%n
+                [%d{yyyy-MM-dd HH:mm:ss.SSS}] %-4relative [%yellow(%thread)] %highlight(%-5level) [%yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId})] %green(%logger{35}.%M\(%L\)) - %msg%n
             </pattern>
         </encoder>
         <!--滚动策略-->
@@ -32,7 +33,7 @@
         </filter>
         <encoder>
             <pattern>
-                [%d{yyyy-MM-dd HH:mm:ss}] %-4relative [%thread] %-5level %logger{35}.%M\(%L\) - %msg%n
+                [%d{yyyy-MM-dd HH:mm:ss.SSS}] %-4relative [%yellow(%thread)] %highlight(%-5level) [%yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId})] %green(%logger{35}.%M\(%L\)) - %msg%n
             </pattern>
         </encoder>
         <!--滚动策略-->

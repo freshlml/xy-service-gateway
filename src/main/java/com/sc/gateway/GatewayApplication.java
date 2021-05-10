@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
-@RefreshScope
-@EnableDiscoveryClient
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class, FreeMarkerAutoConfiguration.class})
+@EnableDiscoveryClient
+@RefreshScope
 public class GatewayApplication {
 
     public static void main(String[] argv) {
