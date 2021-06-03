@@ -5,26 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.sc</groupId>
-        <artifactId>common-parent-boot</artifactId>
-        <version>1.0</version>
+        <groupId>com.xy</groupId>
+        <artifactId>xy-common-parent</artifactId>
+        <version>1.0.0</version>
         <relativePath />
     </parent>
-    <groupId>com.sc</groupId>
-    <artifactId>service-gateway</artifactId>
-    <!-- 当前版本号1.0，如果1.0稳定后，继续开发1.1，则将版本号改成1.1 -->
-    <version>1.0</version>
-    <name>service-gateway</name>
+    <groupId>com.xy</groupId>
+    <artifactId>xy-service-gateway</artifactId>
+    <!-- 当前版本号1.0.0，如果1.0.0稳定后，继续开发1.0.1，则将版本号改成1.0.1 -->
+    <version>1.0.0</version>
+    <name>xy-service-gateway</name>
     <description>gateway</description>
-    <url>https://www.github.com/freshlml/service-gateway</url>
+    <url>https://www.github.com/freshlml/xy-service-gateway</url>
     <scm>
-        <url>https://www.github.com/freshlml/service-gateway</url>
+        <url>https://www.github.com/freshlml/xy-service-gateway</url>
     </scm>
 
     <properties>
         <skipTests>true</skipTests>
-        <!--当common版本号变更时，此处也发生变更 -->
-        <common.version>1.0</common.version>
+        <!--当xy-common版本号变更时，此处也发生变更 -->
+        <xy-common.version>1.0.0</xy-common.version>
     </properties>
 
     <!-- 定义profiles
@@ -63,11 +63,11 @@
     </profiles>
 
     <dependencies>
-        <!-- common -->
+        <!-- xy-common -->
         <dependency>
-            <groupId>com.sc</groupId>
-            <artifactId>common</artifactId>
-            <version>${common.version}</version>
+            <groupId>com.xy</groupId>
+            <artifactId>xy-common</artifactId>
+            <version>${xy-common.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -131,6 +131,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--<version>${parent.parent.parent.parent.version}</version>-->
             </plugin>
         </plugins>
     </build>
