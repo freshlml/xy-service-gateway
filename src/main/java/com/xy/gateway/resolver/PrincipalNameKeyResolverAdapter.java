@@ -1,4 +1,4 @@
-package com.xy.sample.gateway.resolver;
+package com.xy.gateway.resolver;
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.filter.ratelimit.PrincipalNameKeyResolver;

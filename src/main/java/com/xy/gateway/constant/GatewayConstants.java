@@ -1,4 +1,4 @@
-package com.xy.sample.gateway.constant;
+package com.xy.gateway.constant;
 
 public abstract class GatewayConstants {
     public static final String REQUEST_HEADER_USER_UNIQUE_SIGN = "UNIQUE_SIGN"; //request header用户唯一标记

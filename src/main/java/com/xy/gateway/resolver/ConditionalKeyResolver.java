@@ -1,4 +1,4 @@
-package com.xy.sample.gateway.resolver;
+package com.xy.gateway.resolver;
 
 import org.springframework.web.server.ServerWebExchange;
 
