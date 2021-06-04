@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.xy</groupId>
-        <artifactId>xy-common-parent</artifactId>
+        <artifactId>xy-common-dependencies</artifactId>
         <version>1.0.0</version>
         <relativePath />
     </parent>
@@ -47,18 +47,18 @@
             <properties>
                 <package.environment>test</package.environment>
             </properties>
-            <!--<activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>-->
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <package.environment>prod</package.environment>
             </properties>
-            <!--<activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>-->
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
         </profile>
     </profiles>
 
@@ -131,7 +131,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--<version>${parent.parent.parent.parent.version}</version>-->
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
