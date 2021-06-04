@@ -1,4 +1,4 @@
-package com.sc.gateway.resolver;
+package com.xy.gateway.resolver;
 
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;

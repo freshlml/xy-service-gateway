@@ -1,7 +1,4 @@
-package com.sc.gateway.config;
-
-import com.sc.gateway.predicates.SampleRoutePredicateFactory;
-import org.springframework.context.annotation.Bean;
+package com.xy.gateway.config;
 
 /**
  * 和GatewayFilter一样不太好用

@@ -1,4 +1,4 @@
-package com.sc.gateway.filters;
+package com.xy.gateway.filters;
 
 import com.netflix.client.IResponse;
 import lombok.extern.slf4j.Slf4j;

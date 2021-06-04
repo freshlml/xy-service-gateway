@@ -1,6 +1,6 @@
-package com.sc.gateway.config;
+package com.xy.gateway.config;
 
-import com.sc.gateway.resolver.DefaultMixedKeyResolver;
+import com.xy.gateway.resolver.DefaultMixedKeyResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,8 +1,8 @@
-package com.sc.gateway.resolver;
+package com.xy.gateway.resolver;
 
-import com.sc.gateway.constant.GatewayConstants;
-import com.sc.gateway.enums.CustomKeyResolverEnum;
-import com.sc.gateway.utils.GatewayUtils;
+import com.xy.gateway.constant.GatewayConstants;
+import com.xy.gateway.enums.CustomKeyResolverEnum;
+import com.xy.gateway.utils.GatewayUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.web.server.ServerWebExchange;
