@@ -1,4 +1,4 @@
-package com.xy.gateway.config;
+package com.xy.sample.gateway.config;
 
 /**
  * 和GatewayFilter一样不太好用

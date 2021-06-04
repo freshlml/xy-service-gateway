@@ -1,4 +1,4 @@
-package com.xy.gateway.utils;
+package com.xy.sample.gateway.utils;
 
 import org.springframework.context.ApplicationContext;
 

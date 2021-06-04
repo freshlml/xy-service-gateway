@@ -1,4 +1,4 @@
-package com.xy.gateway;
+package com.xy.sample.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

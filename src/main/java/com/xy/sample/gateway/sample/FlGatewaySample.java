@@ -1,4 +1,4 @@
-package com.xy.gateway.sample;
+package com.xy.sample.gateway.sample;
 
 
 import java.util.function.Predicate;
