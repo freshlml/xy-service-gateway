@@ -13,7 +13,7 @@ import org.springframework.context.annotation.FilterType;
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class, FreeMarkerAutoConfiguration.class})
 @EnableDiscoveryClient
-@ComponentScan(basePackages = {"com.xy", "com.sc"}, excludeFilters = {@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, classes = {RmqTxServiceImpl.class})})
+@ComponentScan(basePackages = {"com.xy.gateway", "com.sc.common"}, excludeFilters = {@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, classes = {RmqTxServiceImpl.class})})
 public class GatewayApplication {
 
     public static void main(String[] argv) {
