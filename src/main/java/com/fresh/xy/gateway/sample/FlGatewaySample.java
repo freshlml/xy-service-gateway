@@ -20,9 +20,9 @@ import java.util.function.Predicate;
  *   cloud:
  *     gateway:
  *       routes:
- *         - id: route-service-com.fresh.xy.gateway.sample ##如上述Route所说, 配置id
+ *         - id: route-service-sample ##如上述Route所说, 配置id
  *           uri: lb://service-user   ##如上述Route所说, 配置uri
- *           com.fresh.xy.gateway.predicates:              ##如上述Route所说, 配置predicate集合
+ *           predicates:              ##如上述Route所说, 配置predicate集合
  *             - Path=                                      ## 内置的 Path predicate器, 接受两个参数,1.Spring PathMatcher patterns的列表2.matchOptionalTrailingSeparator的可选标志
  *                 /sampleScan/**,                          #   PathMatcher采用Ant风格的路径写法@see {Ant风格的路径}
  *                 /user/**,
@@ -47,7 +47,7 @@ import java.util.function.Predicate;
  *                 X-Request-Id, \d+
  *             - Host=                                      ## 内置的 Host predicate器, 接受一个String参数，","分隔的Host列表，每一个Host使用Ant风格路径以"."分隔，return true当请求头中Host的值满足任意一个Host时
  *                 {pro}.spring.cc,**.google.org
- *           com.fresh.xy.gateway.filters:    ##如上述Route所说, 配置filter集合
+ *           filters:    ##如上述Route所说, 配置filter集合
  *             - AddRequestHeader=                          ## 内置的 AddRequestHeader filter器，两个参数，写入request header
  *                 ORG_ID,123
  *             - AddRequestParameter=                       ## 内置的 AddRequestParameter filter器，两个参数，写入查询参数(GET?)
@@ -65,22 +65,22 @@ import java.util.function.Predicate;
  *             - name: RequestRateLimiter                   ## 内置的 RequestRateLimiter filter器，用于限流
  *               args:
  *                 rate-limiter: "#{@myRateLimiter}"     #配置{@link org.springframework.cloud.gateway.filter.ratelimit.RateLimiter}实现类
- *                 key-com.fresh.xy.gateway.resolver: "#{@userKeyResolver}"   #配置{@link org.springframework.cloud.gateway.filter.ratelimit.KeyResolver}实现类,默认实现类是{@link org.springframework.cloud.gateway.filter.ratelimit.PrincipalNameKeyResolver}
+ *                 key-resolver: "#{@userKeyResolver}"   #配置{@link org.springframework.cloud.gateway.filter.ratelimit.KeyResolver}实现类,默认实现类是{@link org.springframework.cloud.gateway.filter.ratelimit.PrincipalNameKeyResolver}
  *                 redis-rate-limiter
  *                   replenishRate: 100                  #用户每秒允许多少个请求
  *                   burstCapacity: 100                  #用户每秒最大请求数,将此值设置为零将阻止所有请求
  *             - StripPrefix=1                              ## 内置的StripPrefix filter器，在转发给下游之前，将路径剥离的数量，如/name/bar/foo ===> /bar/foo
  *             - Hystrix=                                   ## 内置的 Hystrix filter器，hystrixCommandName,fallback地址，(需要hystrix依赖)，将其余filter及后续包装在hystrixCommand中执行
- *                 hystrixCommandName,forward:/fallback      #fallback地址既可以是gateway本地Controller,也可以是下游的服务提供的Controller @see {forward到下游服务}
+ *                 hystrixCommandName,forward:/com.fresh.xy.sample2.api.fallback      #fallback地址既可以是gateway本地Controller,也可以是下游的服务提供的Controller @see {forward到下游服务}
  *             等等内置的filter见文档
  *
  * forward到下游服务
- *           - id: ingredients-fallback
+ *           - id: ingredients-com.fresh.xy.sample2.api.fallback
  *           uri: lb://service-user
- *           com.fresh.xy.gateway.predicates:
+ *           predicates:
  *             - Path=
- *                 /fallback
- *           com.fresh.xy.gateway.filters:
+ *                 /com.fresh.xy.sample2.api.fallback
+ *           filters:
  *             - FallbackHeaders=                           ## FallbackHeaders，将Hystrix执行的异常信息写到header从而将异常信息传送到下游服务
  *                 executionExceptionTypeHeaderName: Test-Header
  *
