@@ -1,6 +1,6 @@
-package com.xy.gateway.config;
+package com.fresh.xy.gateway.config;
 
-import com.xy.gateway.filters.SampleGlobalFilter;
+import com.fresh.xy.gateway.filters.SampleGlobalFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

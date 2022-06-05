@@ -1,4 +1,4 @@
-package com.xy.gateway.enums;
+package com.fresh.xy.gateway.enums;
 
 
 import java.util.Arrays;

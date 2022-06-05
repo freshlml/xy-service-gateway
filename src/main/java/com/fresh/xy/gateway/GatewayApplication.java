@@ -1,6 +1,5 @@
-package com.xy.gateway;
+package com.fresh.xy.gateway;
 
-import com.sc.common.rmq.tx.service.impl.RmqTxServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
@@ -9,11 +8,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
+
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class, FreeMarkerAutoConfiguration.class})
 @EnableDiscoveryClient
-@ComponentScan(basePackages = {"com.xy.gateway", "com.sc.common"}, excludeFilters = {@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, classes = {RmqTxServiceImpl.class})})
+@ComponentScan(basePackages = {"com.fresh.xy.gateway", "com.fresh.xy.common"})
 public class GatewayApplication {
 
     public static void main(String[] argv) {

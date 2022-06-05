@@ -1,4 +1,4 @@
-package com.xy.gateway.resolver;
+package com.fresh.xy.gateway.resolver;
 
 public class DefaultMixedKeyResolver extends MixedKeyResolver {
 

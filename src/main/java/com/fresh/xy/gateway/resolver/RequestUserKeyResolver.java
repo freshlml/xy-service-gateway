@@ -1,7 +1,7 @@
-package com.xy.gateway.resolver;
+package com.fresh.xy.gateway.resolver;
 
-import com.xy.gateway.constant.GatewayConstants;
-import com.xy.gateway.enums.CustomKeyResolverEnum;
+import com.fresh.xy.gateway.constant.GatewayConstants;
+import com.fresh.xy.gateway.enums.CustomKeyResolverEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;

@@ -1,6 +1,6 @@
-package com.xy.gateway.resolver;
+package com.fresh.xy.gateway.resolver;
 
-import com.xy.gateway.enums.CustomKeyResolverEnum;
+import com.fresh.xy.gateway.enums.CustomKeyResolverEnum;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;

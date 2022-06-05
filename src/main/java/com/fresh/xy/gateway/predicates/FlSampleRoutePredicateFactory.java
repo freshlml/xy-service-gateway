@@ -1,4 +1,4 @@
-package com.xy.gateway.predicates;
+package com.fresh.xy.gateway.predicates;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.handler.predicate.RoutePredicateFactory;
@@ -19,7 +19,7 @@ public class FlSampleRoutePredicateFactory implements RoutePredicateFactory<FlSa
     @Override
     public Predicate<ServerWebExchange> apply(Config config) {
         return serverWebExchange -> {
-            log.info("apply执行, config: {}, exchange: {}", config, serverWebExchange);
+            log.info("apply执行, com.fresh.xy.gateway.config: {}, exchange: {}", config, serverWebExchange);
 
             return true;
         };
@@ -63,7 +63,7 @@ public class FlSampleRoutePredicateFactory implements RoutePredicateFactory<FlSa
         });
         //执行Predicate
         predicate.test(new DefaultServerWebExchange(null, null, null, null, null));
-        //route.applyAsync(config -> {log.info("consumer Config, {}", config);});
+        //route.applyAsync(com.fresh.xy.gateway.config -> {log.info("consumer Config, {}", com.fresh.xy.gateway.config);});
 
     }
 }
