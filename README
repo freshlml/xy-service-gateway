@@ -1,3 +1,7 @@
 fresh桶的xy项目的gateway服务
 com.fresh.xy:xy-service-gateway
 包前缀: com.fresh.xy.gateway
+
+本地: build,run/debug，是否打包到本地仓库都可(它不被其他项目依赖)
+线上: 使用maven打包后运行，是否打包到远端仓库都可(它不被其他项目依赖)
+
