@@ -22,7 +22,7 @@
 
     <properties>
         <skipTests>true</skipTests>
-        <!-- 此处引用的xy-common版本号 -->
+        <!-- xy-common版本号 -->
         <xy-common.version>1.0.0</xy-common.version>
     </properties>
 
