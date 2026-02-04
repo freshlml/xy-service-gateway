@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.fresh</groupId>
-        <artifactId>fresh-common-dependencies</artifactId>
+        <groupId>com.fresh.xy</groupId>
+        <artifactId>fresh-xy-starter</artifactId>
         <version>1.0.0</version>
     </parent>
     <groupId>com.fresh.xy</groupId>
